@@ -1,0 +1,159 @@
+
+body {
+    font-family: Arial, sans-serif;
+}
+#con{
+    display: flex ;
+    justify-content: space-between;
+}
+
+
+#top-bar{
+    max-height: 40%;
+    justify-content: space-between;
+    background-color: #f8f9fa;
+
+}
+#top-bar a{
+    margin-left: 85px;
+
+}
+#top-barr{
+    display: flex;
+    justify-content: space-between;
+    
+    
+
+}
+
+.top-barr{
+    background-color: #f8f9fa;
+    display: inline-block;
+}
+
+.logo {
+    max-width: 150px;
+}
+
+.nav-link {
+    font-weight: bold;
+    white-space: nowrap; /* Prevent line break in nav links */
+}
+
+.nav-link.text-danger {
+    color: red !important;
+}
+
+
+
+.banner-img {
+    display: block;
+    width: 50%;
+    height: 100%;
+    justify-items: center;
+    margin-left: 25%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    
+    
+    
+}
+
+@keyframes fantasyAppear {
+    0% {
+        opacity: 0;
+        transform: scale(0.8); 
+    }
+    70% {
+        opacity: 0.7;
+        transform: scale(1.1); 
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1); 
+    }
+}
+
+
+.banner-img {
+    animation: fantasyAppear 2s ease-out 2s forwards; 
+    opacity: 0; 
+}
+
+
+.whats-new {
+   
+    background: #596d25;
+    background: -moz-linear-gradient(top, #596d25 0%, #69812d 3%, #718a2f 6%, #708a2f 74%, #768e30 77%, #799133 77%, #7f9332 79%, #8a9a37 82%, #8f9e39 83%, #919d37 83%, #96a13b 84%, #97a23a 85%, #9ea53d 86%, #a4aa3e 87%, #b5b344 90%, #b4b442 90%, #b9b645 91%, #bcb944 92%, #d5c74c 96%, #e2cf4f 99%, #e3d050 100%);
+    background: -webkit-linear-gradient(top, #596d25 0%, #69812d 3%, #718a2f 6%, #708a2f 74%, #768e30 77%, #799133 77%, #7f9332 79%, #8a9a37 82%, #8f9e39 83%, #919d37 83%, #96a13b 84%, #97a23a 85%, #9ea53d 86%, #a4aa3e 87%, #b5b344 90%, #b4b442 90%, #b9b645 91%, #bcb944 92%, #d5c74c 96%, #e2cf4f 99%, #e3d050 100%);
+    background: linear-gradient(to bottom, #596d25 0%, #69812d 3%, #718a2f 6%, #708a2f 74%, #768e30 77%, #799133 77%, #7f9332 79%, #8a9a37 82%, #8f9e39 83%, #919d37 83%, #96a13b 84%, #97a23a 85%, #9ea53d 86%, #a4aa3e 87%, #b5b344 90%, #b4b442 90%, #b9b645 91%, #bcb944 92%, #d5c74c 96%, #e2cf4f 99%, #e3d050 100%);
+}
+
+.whats-new h2 {
+    font-size: 50px;
+    padding-bottom: 37px;
+    text-align: center;
+   
+    font-weight: 400;
+    font-family: 'Cursive', sans-serif;
+     
+    color: white; 
+    
+}
+
+.img-hover {
+    transition: transform 0.3s; 
+}
+
+.img-hover:hover {
+    transform: scale(1.05); 
+}
+
+.img-fluid{
+    size: 80px !important ;
+    
+}
+.healthy-products h2 {
+    font-family: 'Cursive', sans-serif;
+    color: #d9534f;
+    font-size: 2.5rem;
+}
+.new-images{
+    
+    padding-bottom: 90px !important;
+    background-color: rgb(198, 221, 161);
+}
+.text-success{
+    font-weight: bold;
+    color: #1bd142!important;
+}
+
+.healthy-products p {
+    font-size: 16px;
+    
+}
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 40px 0;
+}
+
+.footer-links li,
+.social-links li {
+    margin-bottom: 10px;
+}
+
+.footer-section form input[type="email"] {
+    padding: 10px;
+}
+
+.footer-section button {
+    width: 30%;
+    background-color: #28a745;
+}
+
+.footer-section button:hover {
+    background-color: #218838;
+}
+
+
