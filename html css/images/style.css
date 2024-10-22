@@ -1,70 +1,218 @@
+/* General Styles */
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
+    box-sizing: border-box;
 }
 
-.navbar{
-    padding: 20px;
-    border-bottom: 1px solid black;
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
 }
-.imge{
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Top Bar */
+#con {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    
+    background-color: #f8f9fa;
+    padding: 10px 20px;
 }
-.nav1st{
-    
-    text-align: right;
-}
-nav ul{
-    
-    display: inline-block;
-    list-style: none;
-}
-nav ul li{
-    flex: 1;
-    text-align: right;
-    display: inline-block;
-    margin: 20px;
-}
-.nav2nd{
-    text-align: right;
 
-}
-.layout{
-    
+.top-bar {
     display: flex;
-    margin: 20px;
-    padding: 20px;
-    justify-content: space-around;
+    gap: 20px;
+}
 
+.top-bar img {
+    height: 30px;
 }
-.layout img{
-    min-height: 225px;
+
+.top-barr {
+    display: flex;
+    gap: 20px;
 }
-.dropdown a{
-    background-color: white;
+
+.nav-link {
     text-decoration: none;
-    font-size: medium;
-    margin-left: 10px;
-}
-.dropdown{
-    float: left;
-    clear: right;
-}
-.logoo img{
-    margin-left: 400px;
-    margin-top: 50px ;
-}
-.nav2nd a{
-    margin-left: 25px;
+    color: #333;
+    font-weight: bold;
 }
 
+/* Header */
+header {
+    text-align: center;
+    padding: 20px 0;
+}
 
+.logo {
+    max-width: 150px;
+}
 
+/* Navigation */
+.main-nav {
+    background-color: #f8f9fa;
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.nav-list {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-list a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    padding: 10px;
+    white-space: nowrap;
+}
+
+.text-danger {
+    color: red;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* Banner Section */
+.banner {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.banner-img {
+    width: 50%;
+    margin: 0 auto;
+    animation: fantasyAppear 2s ease-out 2s forwards;
+    opacity: 0;
+}
+
+@keyframes fantasyAppear {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    70% {
+        opacity: 0.7;
+        transform: scale(1.1);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* What's New Section */
+.whats-new {
+    background: linear-gradient(to bottom, #596d25 0%, #69812d 3%, #718a2f 6%, #708a2f 74%, #768e30 77%, #799133 77%, #7f9332 79%, #8a9a37 82%, #8f9e39 83%, #919d37 83%, #96a13b 84%, #97a23a 85%, #9ea53d 86%, #a4aa3e 87%, #b5b344 90%, #b4b442 90%, #b9b645 91%, #bcb944 92%, #d5c74c 96%, #e2cf4f 99%, #e3d050 100%);
+    padding: 40px 0;
+}
+
+.whats-new h2 {
+    font-size: 50px;
+    color: white;
+    text-align: center;
+    margin-bottom: 40px;
+    font-family: 'Cursive', sans-serif;
+    font-weight: 400;
+}
+
+/* Product Grid */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.product-item {
+    text-align: center;
+}
+
+.img-hover {
+    transition: transform 0.3s;
+    max-width: 100%;
+}
+
+.img-hover:hover {
+    transform: scale(1.05);
+}
+
+/* Healthy Products Section */
+.healthy-products {
+    padding: 40px 0;
+}
+
+.healthy-products h2 {
+    text-align: center;
+    color: #d9534f;
+    font-size: 2.5rem;
+    font-family: 'Cursive', sans-serif;
+    margin-bottom: 40px;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.features-grid-bottom {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.feature {
+    text-align: center;
+}
+
+.text-success {
+    color: #1bd142;
+    font-weight: bold;
+}
+
+.feature img {
+    margin: 0 7px;
+}
+
+/* New Images Section */
+.new-images {
+    background-color: rgb(198, 221, 161);
+    padding: 40px 0 90px;
+}
+
+.new-images h2 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* Footer */
 footer {
     background-color: #333;
     color: #fff;
@@ -72,93 +220,39 @@ footer {
 }
 
 .footer-container {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
-.footer-section {
-    flex: 1;
-    margin: 20px;
-    min-width: 200px;
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    margin-bottom: 30px;
 }
 
 .footer-section h3 {
-    margin-bottom: 15px;
-    font-size: 18px;
+    margin-bottom: 20px;
 }
 
-.footer-links,
-.social-links {
+.footer-section ul {
     list-style: none;
-    padding: 0;
 }
 
-.footer-links li,
-.social-links li {
-    margin-bottom: 10px;
-}
-
-.footer-links li a,
-.social-links li a {
+.footer-section a {
     color: #fff;
     text-decoration: none;
-}
-
-.footer-links li a:hover,
-.social-links li a:hover {
-    text-decoration: underline;
-}
-
-.footer-section p {
-    margin-bottom: 10px;
 }
 
 .footer-section form {
     display: flex;
-    margin-top: 10px;
+    flex-direction: column;
+    gap: 10px;
 }
 
-.footer-section input[type="email"] {
+.footer-section input {
     padding: 10px;
-    width: 70%;
     border: none;
-    border-radius: 5px 0 0 5px;
-}
-
-.footer-section button {
-    padding: 10px;
-    width: 30%;
-    border: none;
-    background-color: #28a745;
-    color: white;
-    border-radius: 0 5px 5px 0;
-    cursor: pointer;
-}
-
-.footer-section button:hover {
-    background-color: #218838;
-}
-
-.footer-bottom {
-    text-align: center;
-    margin-top: 30px;
-    padding-top: 20px;
-    border-top: 1px solid #444;
-}
-
-.footer-bottom p {
-    margin-bottom: 10px;
-}
-
-.footer-bottom a {
-    color: #fff;
-    text-decoration: none;
-}
-
-.footer-bottom a:hover {
-    text-decoration: underline;
+    border-radius: 4px;
 }

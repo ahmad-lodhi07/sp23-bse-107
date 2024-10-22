@@ -3,105 +3,175 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Website Layout</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <div class="header">
-        <div class="container">
-            <div class="navbar">
-                <div class="imge">
-                    <nav  class="nav2nd">
-                        <a href=""><img src="images/story.jpg" alt=""></a>
-                        <a href=""><img src="images/icon-fb-hover-1.png" alt=""></a>
-                        <a href=""><img src="images/article-hover.png" alt=""></a>
-                    </nav>
-                    <img src="images/logo.jpg" alt="">
-
-                    <nav class="nav1st">
-                        <ul>
-                            <li> <a href="">Careers</a></li>
-                            <li><a href="">Contact us</a></li>
-                            <li><i class ="fa fa-search"> </i></li>
-                            
-                        </ul>
-                    </nav>
-
-                    
-                </div>
-              
-            </div>
-
-            <div class="dropdown">
-                <a href="">ABOUT MITCHELL'S</a>
-                <a href="">MITCHELL'S PLANT</a>
-                <a href="">BRANDS</a>
-                <a href="">MEDIA</a>
-                <a href="">INVESTOR RELATIOSHIP</a>
-                <a href="">EXPORTS</a>
-                <a href="">SOCIAL RESPONSIBILITY</a>
-                <a href="">BALLOT PAPER</a>
-            </div>
-
-            <div class="logoo">
-                <img src="/images/logo.jfif" alt="">
-            </div>
-
-            <div class="layout">
-                <img src="images/img4.jpg" alt="" width="225px">
-                <img src="images/img5.jpg" alt="" width="225px">
-                <img src="images/img6.jpg" alt="" width="225px">
-            </div>
-
+    <div id="con">
+        <div class="top-bar" id="top-bar">
+            <a href="#"><img src="images/story.jpg" alt="" class="img-fluid"></a>
+            <a href="#"><img src="images/fb-hover.png" alt="" class="img-fluid"></a>
+            <a href="#"><img src="images/article-hover.png" alt="" class="img-fluid"></a>
+        </div>
+        <div class="top-barr" id="top-barr">
+            <a href="#" class="nav-link">Careers</a>
+            <a href="#" class="nav-link">Contact Us</a>
+            <a href="#" class="nav-link"><i class="fa fa-search"></i></a>
         </div>
     </div>
 
+    <header>
+        <img src="images/mffl-logo.jpg" alt="Mitchell's Logo" class="logo">
+    </header>
+
+    <nav class="main-nav">
+        <div class="nav-container">
+            <button class="menu-toggle" onclick="toggleMenu()">
+                <span class="menu-icon"></span>
+            </button>
+            <ul class="nav-list">
+                <li><a href="#">ABOUT MITCHELL'S</a></li>
+                <li><a href="#">MITCHELL'S PLANT</a></li>
+                <li><a href="#">BRANDS</a></li>
+                <li><a href="#">MEDIA</a></li>
+                <li><a href="#">INVESTOR RELATIONSHIP</a></li>
+                <li><a href="#">EXPORTS</a></li>
+                <li><a href="#">SOCIAL RESPONSIBILITY</a></li>
+                <li><a href="#" class="text-danger">PROXY FORM</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="banner">
+        <img src="images/award.jpg" alt="A Whole Lot of Love" class="banner-img">
+    </section>
+
+    <section class="whats-new">
+        <h2>What's New</h2>
+        <div class="product-grid">
+            <div class="product-item">
+                <a href="#"><img src="images/imageA.png" alt="Peri Peri" class="img-hover"></a>
+            </div>
+            <div class="product-item">
+                <a href="#"><img src="images/imageB.png" alt="Mayo" class="img-hover"></a>
+            </div>
+            <div class="product-item">
+                <a href="#"><img src="images/imageC.jpg" alt="Jams" class="img-hover"></a>
+            </div>
+            <div class="product-item">
+                <a href="#"><img src="images/imageD.png" alt="Toffees" class="img-hover"></a>
+            </div>
+        </div>
+    </section>
+
+    <section class="healthy-products">
+        <div class="container">
+            <h2>Healthy Products for a <br> Healthier Heart</h2>
+            <div class="features-grid">
+                <div class="feature">
+                    <h4 class="text-success">
+                        <img src="images/foodsa.png" alt="Food Safety" width="35" height="30">
+                        Food Safety
+                    </h4>
+                    <p>Mitchell's has been an approved supplier to the United Nations World Food Programme (UNWFP), an honour that vouches for the high quality of the company's products.</p>
+                </div>
+                <div class="feature">
+                    <a href="#"><img src="images/heart.png" alt="Heart Products"></a>
+                </div>
+                <div class="feature">
+                    <h4 class="text-success">
+                        Our Potential
+                        <img src="images/thumbPot.png" alt="Our Potential" width="35" height="30">
+                    </h4>
+                    <p>Annually, we have the capacity to produce around 18 million bottles of fruit squashes, nectars and juices, 18 million jars of jam, jellies and marmalades and 14 million bottles of sauces, as well as 5,000 tonnes of confectionery, 2,400 tonnes of enrobed chocolate bars and 600 tonnes of moulded chocolates.</p>
+                </div>
+            </div>
+            <div class="features-grid-bottom">
+                <div class="feature">
+                    <h4 class="text-success">
+                        <img src="images/Quality.png" alt="Quality" width="35" height="30">
+                        Quality Commitment
+                    </h4>
+                    <p>For us, quality control starts with the acceptance of incoming raw materials, for which we have exacting standards – materials are not taken into the factory until they have been thoroughly tested and approved. ISO 9001:2008, Halal, PSQCA, YUMS, HACCP</p>
+                </div>
+                <div class="feature">
+                    <h4 class="text-success">
+                        Our Strengths
+                        <img src="images/Strenght.png" alt="Strengths" width="35" height="30">
+                    </h4>
+                    <p>State of the art, industrial equipment, professional management and a trained workforce, all combine to ensure that Mitchell's continues its dominance as the innovator, market leader and trendsetter.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="new-images">
+        <h2>Our Products</h2>
+        <div class="product-grid">
+            <div class="product-item">
+                <img src="images/mango.jpg" alt="Product 1" class="img-hover">
+            </div>
+            <div class="product-item">
+                <img src="images/tomato.jpg" alt="Product 2" class="img-hover">
+            </div>
+            <div class="product-item">
+                <img src="images/Mix.jpg" alt="Product 3" class="img-hover">
+            </div>
+            <div class="product-item">
+                <img src="images/bottles.jpg" alt="Product 4" class="img-hover">
+            </div>
+        </div>
+    </section>
+
     <footer>
         <div class="footer-container">
-            <div class="footer-section">
-                <h3>Mitchel Fruit Farm</h3>
-                <ul class="footer-links">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Products</a></li>
-                    <li><a href="#">Contact</a></li>
-                    <li><a href="#">Blog</a></li>
-                </ul>
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>Mitchell Fruit Farm</h3>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Products</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect With Us:</h3>
+                    <ul>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">Pinterest</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Information:</h3>
+                    <p>Email: <a href="mailto:info@mitchelfruitfarm.com">info@mitchelfruitfarm.com</a></p>
+                    <p>Phone: (123) 456-7890</p>
+                    <p>Address: 123 Fruit Lane, Orchard City, ST 12345</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Newsletter Subscription:</h3>
+                    <p>Sign up for updates on new products and seasonal specials!</p>
+                    <form action="#">
+                        <input type="email" placeholder="Enter your email" required>
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
             </div>
-    
-            <div class="footer-section">
-                <h3>Connect With Us:</h3>
-                <ul class="social-links">
-                    <li><a href="#">Facebook</a></li>
-                    <li><a href="#">Instagram</a></li>
-                    <li><a href="#">Twitter</a></li>
-                    <li><a href="#">Pinterest</a></li>
-                </ul>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Mitchell Fruit Farm. All rights reserved.</p>
+                <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
             </div>
-    
-            <div class="footer-section">
-                <h3>Contact Information:</h3>
-                <p>Email: <a href="mailto:info@mitchelfruitfarm.com">info@mitchelfruitfarm.com</a></p>
-                <p>Phone: (123) 456-7890</p>
-                <p>Address: 123 Fruit Lane, Orchard City, ST 12345</p>
-            </div>
-    
-            <div class="footer-section">
-                <h3>Newsletter Subscription:</h3>
-                <p>Sign up for updates on new products and seasonal specials!</p>
-                <form action="#">
-                    <input type="email" placeholder="Enter your email" required>
-                    <button type="submit">Subscribe</button>
-                </form>
-            </div>
-        </div>
-    
-        <div class="footer-bottom">
-            <p>&copy; 2024 Mitchel Fruit Farm. All rights reserved.</p>
-            <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
         </div>
     </footer>
-    
+
+    <script>
+        function toggleMenu() {
+            document.querySelector('.nav-list').classList.toggle('show');
+        }
+    </script>
 </body>
 </html>
