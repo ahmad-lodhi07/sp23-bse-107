@@ -1,0 +1,3 @@
+roject: Online Bus Ticket Booking Website
+
+This project is an online bus ticket booking system that allows users to browse available buses, routes, and seat availability. Users can select seats, book tickets, and pay online. The website also features an admin panel for managing schedules and bookings. Built using HTML, CSS, and JavaScript for the front end, with a PHP and MySQL back end.

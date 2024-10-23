@@ -1,0 +1,225 @@
+/* Existing base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: #fafafa;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Enhanced Hero Section */
+.hero {
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+    min-height: 60vh;
+    position: relative;
+    padding: 4rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+}
+
+.hero-content {
+    animation: fadeInUp 1s ease-out;
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    opacity: 0.9;
+}
+
+/* Enhanced Project Cards with Image Animations */
+.project-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+.project-image {
+    flex: 1;
+    min-height: 300px;
+    overflow: hidden;
+    position: relative;
+}
+
+.project-image::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.1) 100%);
+    pointer-events: none;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.215, 0.610, 0.355, 1);
+    filter: brightness(0.95) contrast(1.1);
+}
+
+.project-card:hover .project-image img {
+    transform: scale(1.05) translateY(-2px);
+}
+
+/* Enhanced Semester Headers */
+.semester-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    color: #4f46e5;
+    opacity: 0;
+    animation: fadeInLeft 0.8s ease-out forwards;
+}
+
+.semester-number {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #8b5cf6;
+    margin-right: 1rem;
+    opacity: 0.3;
+    transform: translateX(-10px);
+    transition: transform 0.3s ease;
+}
+
+.semester-section:hover .semester-number {
+    transform: translateX(0);
+    opacity: 0.4;
+}
+
+/* Animation Keyframes */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Enhanced Project Content */
+.project-content {
+    flex: 1;
+    padding: 2rem;
+    background: linear-gradient(to bottom, #ffffff 0%, #fafafa 100%);
+}
+
+.project-tag {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: #e0e7ff;
+    color: #4f46e5;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    transform: translateY(0);
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover .project-tag {
+    transform: translateY(-2px);
+}
+
+/* Enhanced Buttons */
+.btn-primary, .btn-secondary {
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary {
+    background: #4f46e5;
+    color: white;
+    border: none;
+}
+
+.btn-primary:hover {
+    background: #4338ca;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(79, 70, 229, 0.4);
+}
+
+.btn-secondary {
+    background: #e0e7ff;
+    color: #4f46e5;
+    border: none;
+}
+
+.btn-secondary:hover {
+    background: #c7d2fe;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(224, 231, 255, 0.6);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .semester-number {
+        font-size: 2rem;
+    }
+
+    .project-image {
+        min-height: 200px;
+    }
+
+    .project-card {
+        flex-direction: column;
+    }
+}
+
+/* Smooth Scroll Behavior */
+html {
+    scroll-behavior: smooth;
+}
