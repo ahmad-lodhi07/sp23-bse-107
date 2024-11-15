@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Form</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f3f4f6;
+    }
+    .form-container {
+      background-color: #ffffff;
+      padding: 40px;
+      border-radius: 10px;
+      max-width: 500px;
+      margin: auto;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    h2 {
+      font-weight: 700;
+      color: #333;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .form-group label {
+      font-weight: 600;
+      color: #555;
+    }
+    .form-control {
+      height: 45px;
+      font-size: 16px;
+      border-radius: 5px;
+    }
+    .action-buttons {
+      display: flex;
+      justify-content: space-between;
+    }
+    .action-buttons .btn {
+      width: 48%;
+      font-size: 16px;
+      padding: 10px;
+    }
+    .btn-save {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      font-size: 18px;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container mt-5">
+    <div class="form-container">
+      <h2>Product Form</h2>
+      <form method="POST" action="/saveProduct">
+        <div class="form-group">
+          <label for="productID">Product ID</label>
+          <input type="text" id="productID" name="productID" class="form-control" placeholder="Enter Product ID" required>
+        </div>
+        <div class="form-group">
+          <label for="title">Title</label>
+          <input type="text" id="title" name="title" class="form-control" placeholder="Enter Product Title" required>
+        </div>
+        <div class="form-group">
+          <label for="price">Price</label>
+          <input type="number" id="price" name="price" class="form-control" placeholder="Enter Price" required>
+        </div>
+        <div class="form-group action-buttons">
+          <button type="button" class="btn btn-primary">Edit</button>
+          <button type="button" class="btn btn-danger">Delete</button>
+        </div>
+        <button type="submit" class="btn btn-success btn-save">Save</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS and dependencies -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
