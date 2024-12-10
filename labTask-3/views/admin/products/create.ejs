@@ -56,11 +56,7 @@
   <div class="container mt-5">
     <div class="form-container">
       <h2>Product Form</h2>
-      <form method="POST" action="/saveProduct">
-        <div class="form-group">
-          <label for="productID">Product ID</label>
-          <input type="text" id="productID" name="productID" class="form-control" placeholder="Enter Product ID" required>
-        </div>
+      <form action="/admin/products/create" method="post">
         <div class="form-group">
           <label for="title">Title</label>
           <input type="text" id="title" name="title" class="form-control" placeholder="Enter Product Title" required>
@@ -69,11 +65,17 @@
           <label for="price">Price</label>
           <input type="number" id="price" name="price" class="form-control" placeholder="Enter Price" required>
         </div>
-        <div class="form-group action-buttons">
+        <div class="form-group">
+          <label for="description">Description</label>
+          <input type="text" id="description" name="description" class="form-control" placeholder="Enter Description" required>
+        </div>
+        <div class="action-buttons">
           <button type="button" class="btn btn-primary">Edit</button>
           <button type="button" class="btn btn-danger">Delete</button>
         </div>
+        
         <button type="submit" class="btn btn-success btn-save">Save</button>
+        
       </form>
     </div>
   </div>
