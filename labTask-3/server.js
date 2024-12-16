@@ -15,7 +15,7 @@ const adminProductsRouter = require('./routes/admin/products.controller');
 
 server.use('/admin', adminProductsRouter);
 
-const dbURI = 'mongodb://localhost:27017/myDatabase'; // Replace with your database name
+const dbURI = 'mongodb://localhost:27017/sp23-bse-b-107'; // Replace with your database name
 mongoose
   .connect(dbURI)
   .then(() => console.log('Connected to MongoDB'))
