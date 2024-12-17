@@ -77,7 +77,7 @@ server.post("/register", async (req, res) => {
 
 // cart get request
 
-server.get("/cart", async (req, res) => {
+server.get("/cart",authMiddleware, async (req, res) => {
   let cart = req.cookies.cart;
   cart = cart ? cart : [];
   let products = await Product.find({ _id: { $in: cart } });
@@ -94,7 +94,8 @@ server.get("/add-to-cart/:id", (req, res) => {
 
 
 server.get("/", (req, res) => {
-  return res.render("homepage");
+  let user=req.session.user;
+  return res.render("homepage",{user});
 });
 
 let adminMiddleware = require("./middlewares/admin-middleware");
