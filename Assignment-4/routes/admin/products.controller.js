@@ -77,29 +77,4 @@ router.post("/products/create", async (req, res) => {
     res.status(500).send("Server Error");
   }
 });
-
-
-router.get("/admin/products/:page?", async (req, res) => {
-  let page = req.params.page;
-  page = page ? Number(page) : 1;
-  let pageSize = 1;
-  let totalRecords = await Product.countDocuments();
-  let totalPages = Math.ceil(totalRecords / pageSize);
-  // return res.send({ page });
-  let products = await Product.find()
-    .limit(pageSize)
-    .skip((page - 1) * pageSize);
-
-  return res.render("admin/products", {
-    layout: "adminlayout",
-    pageTitle: "Manage Your Products",
-    products,
-    page,
-    pageSize,
-    totalPages,
-    totalRecords,
-  });
-});
-
-
 module.exports = router;
