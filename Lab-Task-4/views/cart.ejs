@@ -1,0 +1,75 @@
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f8f9fa;
+        margin: 0;
+        padding: 20px;
+    }
+
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        background-color: #ffffff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    h4 {
+        text-align: center;
+        font-size: 24px;
+        margin-bottom: 20px;
+        color: #343a40;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    th, td {
+        padding: 12px 15px;
+        border: 1px solid #dee2e6;
+        text-align: left;
+    }
+
+    th {
+        background-color: #17a2b8;
+        color: #ffffff;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f8f9fa;
+    }
+
+    tr:hover {
+        background-color: #e2e6ea;
+        transition: background-color 0.3s ease;
+    }
+
+    td {
+        color: #495057;
+    }
+</style>
+
+<div class="container">
+    <h4>Products in Cart</h4>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% products.forEach(product => { %>
+            <tr>
+                <td><%= product.title %></td>
+                <td>$<%= product.price %></td>
+            </tr>
+            <% }) %>
+        </tbody>
+    </table>
+</div>
