@@ -45,7 +45,7 @@ server.get("/logout", async (req, res) => {
 server.get("/login", async (req, res) => {
   return res.render("auth/login",{user:req.session.user});
 });
-
+A
 // log in post request
 
 server.post("/login", async (req, res) => {
@@ -91,6 +91,45 @@ server.get("/add-to-cart/:id", (req, res) => {
   res.cookie("cart", cart);
   return res.redirect("/");
 });
+const Order = require("./models/order.model"); // Import the Order model
+
+server.post("/checkout", authMiddleware, async (req, res) => {
+    try {
+        const { name, street, city, postalCode } = req.body;
+
+        // Get products from the cart
+        let cart = req.cookies.cart || [];
+        let products = await Product.find({ _id: { $in: cart } });
+
+        // Calculate total amount
+        const totalAmount = products.reduce((sum, product) => sum + product.price, 0);
+
+        // Create a new order
+        const newOrder = new Order({
+            customerName: name,
+            address: { street, city, postalCode },
+            products: cart,
+            totalAmount
+        });
+
+        await newOrder.save();
+
+        // Clear the cart
+        res.clearCookie("cart");
+
+        res.send(`<h3>Order Placed Successfully!</h3><a href="/">Return to Home</a>`);
+    } catch (error) {
+        console.error("Error placing order:", error);
+        res.status(500).send("An error occurred while placing the order.");
+    }
+});
+
+server.get("/admin/orders", authMiddleware, async (req, res) => {
+  const orders = await Order.find().sort({ orderDate: -1 });
+  const products = await Product.find(); // Fetch products for the top table
+  res.render("admin/products", { products, orders });
+});
+
 
 
 server.get("/", (req, res) => {

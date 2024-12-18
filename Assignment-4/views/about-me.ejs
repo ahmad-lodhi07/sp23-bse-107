@@ -1,1 +1,124 @@
-<h1>About Me</h1>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href=" /css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Academic Portfolio</h1>
+            <p>A Journey Through My Academic Projects</p>
+        </div>
+        <div class="wave">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                <path fill="#ffffff" fill-opacity="1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+            </svg>
+        </div>
+    </header>
+
+    <main class="projects-container">
+        <section class="semester-section">
+            <h2 class="semester-header">
+                <span class="semester-number">01</span>
+                First Semester
+            </h2>
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="image/bus.jpg" alt="Bus Ticket Booking System">
+                </div>
+                <div class="project-content">
+                    <h3>Online Bus Ticket Booking System</h3>
+                    <span class="project-tag">Web Development</span>
+                    <p>A web-based platform for booking bus tickets online, streamlining the reservation process with user-friendly interface and secure payment integration.</p>
+                    <div class="project-buttons">
+                        <button onclick="showProjectDetails(1)" class="btn-primary">View Details</button>
+                        <a href="#" class="btn-secondary">Live Demo</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="semester-section">
+            <h2 class="semester-header">
+                <span class="semester-number">02</span>
+                Second Semester
+            </h2>
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="image/Emp.jpg" alt="Employee Management System">
+                </div>
+                <div class="project-content">
+                    <h3>IT Industry Employee Management</h3>
+                    <span class="project-tag">Desktop Application</span>
+                    <p>A comprehensive employee management system designed for IT companies, featuring attendance tracking, performance monitoring, and task management.</p>
+                    <div class="project-buttons">
+                        <button onclick="showProjectDetails(2)" class="btn-primary">View Details</button>
+                        <a href="#" class="btn-secondary">Live Demo</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="semester-section">
+            <h2 class="semester-header">
+                <span class="semester-number">03</span>
+                Third Semester
+            </h2>
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="image/hosp.jpg" alt="Hospital Management System">
+                </div>
+                <div class="project-content">
+                    <h3>Hospital Management System</h3>
+                    <span class="project-tag">Data Structures</span>
+                    <p>An efficient hospital management system implementing advanced data structures and algorithms for optimal patient care and resource allocation.</p>
+                    <div class="project-buttons">
+                        <button onclick="showProjectDetails(3)" class="btn-primary">View Details</button>
+                        <a href="#" class="btn-secondary">Live Demo</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="semester-section">
+            <h2 class="semester-header">
+                <span class="semester-number">04</span>
+                Fourth Semester
+            </h2>
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="image/mitch.jpg" alt="Mitchell's Fruit Farm">
+                </div>
+                <div class="project-content">
+                    <h3>Mitchell's Fruit Farm Website</h3>
+                    <span class="project-tag">Web Development</span>
+                    <p>A modern and responsive website for Mitchell's Fruit Farm, showcasing their products with an intuitive interface and e-commerce capabilities.</p>
+                    <div class="project-buttons">
+                        <button onclick="showProjectDetails(4)" class="btn-primary">View Details</button>
+                        <a href="#" class="btn-secondary">Live Demo</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="projectModal" class="modal">
+        <div class="modal-content">
+            <button onclick="closeModal()" class="close-modal">×</button>
+            <div class="modal-header">
+                <h2 id="modalTitle" class="modal-title"></h2>
+            </div>
+            <div class="modal-body">
+                <p id="modalContent"></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

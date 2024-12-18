@@ -72,4 +72,54 @@
             <% }) %>
         </tbody>
     </table>
+    <div class="checkout-section">
+        <h4>Checkout</h4>
+        <form action="/checkout" method="POST">
+            <div>
+                <label for="name">Name:</label>
+                <input type="text" name="name" id="name" required>
+            </div>
+            <div>
+                <label for="street">Street:</label>
+                <input type="text" name="street" id="street" required>
+            </div>
+            <div>
+                <label for="city">City:</label>
+                <input type="text" name="city" id="city" required>
+            </div>
+            <div>
+                <label for="postalCode">Postal Code:</label>
+                <input type="text" name="postalCode" id="postalCode" required>
+            </div>
+            <button type="submit" class="btn btn-success">Place Order</button>
+        </form>
+    </div>
+    
+    <style>
+        .checkout-section {
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            background-color: #f8f9fa;
+        }
+    
+        .checkout-section div {
+            margin-bottom: 10px;
+        }
+    
+        .checkout-section label {
+            display: block;
+            font-weight: bold;
+        }
+    
+        .checkout-section input {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+        }
+    </style>
+    
 </div>
