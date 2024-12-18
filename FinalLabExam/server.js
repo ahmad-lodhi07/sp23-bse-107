@@ -6,6 +6,8 @@ let server = express();
 
 let Product = require("./models/product.model");
 let User = require("./models/user.model");
+
+const Order = require("./models/order.model"); 
 let cookieParser = require("cookie-parser");
 server.use(cookieParser());
 
@@ -15,7 +17,7 @@ let authMiddleware = require("./middlewares/auth-middleware");
 
 // Middleware to set `user` globally for all views
 server.use((req, res, next) => {
-  res.locals.user = req.session.user || null; // `user` is available in all EJS files
+  res.locals.user = req.session.user || null; 
   next();
 });
 
@@ -74,6 +76,39 @@ server.get("/cart", authMiddleware, async (req, res) => {
   let products = await Product.find({ _id: { $in: cart } });
   return res.render("cart", { products });
 });
+
+// route to handle placement of order
+
+
+server.post("/checkout", authMiddleware, async (req, res) => {
+  try {
+    const { name, street, city, postalCode } = req.body;
+
+    // Retrieve cart from cookies
+    const cart = req.cookies.cart || [];
+    const products = await Product.find({ _id: { $in: cart } });
+    const totalAmount = products.reduce((sum, product) => sum + product.price, 0);
+
+    // Create new order
+    const newOrder = new Order({
+      customerName: name,
+      address: { street, city, postalCode },
+      products: cart,
+      totalAmount,
+    });
+    await newOrder.save();
+
+    // Clear the cart
+    res.clearCookie("cart");
+
+    // Redirect to a confirmation page or home page
+    return res.redirect("/cart");
+  } catch (error) {
+    console.error("Error during checkout:", error);
+    return res.status(500).send("An error occurred during checkout.");
+  }
+});
+
 
 // Other routes
 server.get("/", (req, res) => {

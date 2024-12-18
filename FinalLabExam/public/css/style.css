@@ -1,0 +1,312 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: #fafafa;
+    color: #333;
+    line-height: 1.6;
+}
+
+
+.hero {
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+    min-height: 50vh;
+    position: relative;
+    padding: 3rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+}
+
+.hero-content {
+    animation: fadeInUp 1s ease-out;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.hero-content p {
+    font-size: 1.25rem;
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+
+.project-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: 1rem auto;
+}
+
+.project-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+}
+
+
+.project-image {
+    position: relative;
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    background: #f5f5f5;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transform: scale(1.01); /* Slight scale to prevent white edges */
+    transition: transform 0.5s ease;
+    image-rendering: -webkit-optimize-contrast; /* Improves image sharpness */
+    backface-visibility: hidden; /* Prevents pixelation during transitions */
+}
+
+.project-card:hover .project-image img {
+    transform: scale(1.05);
+}
+
+.project-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.02), rgba(0,0,0,0.1));
+    z-index: 1;
+    pointer-events: none;
+}
+
+
+.semester-header {
+    display: flex;
+    align-items: center;
+    margin: 3rem 0 2rem;
+    padding: 0 1rem;
+}
+
+.semester-number {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #8b5cf6;
+    opacity: 0.4;
+    margin-right: 1rem;
+    transition: all 0.3s ease;
+}
+
+.semester-header h2 {
+    font-size: 1.8rem;
+    color: #4f46e5;
+    font-weight: 600;
+}
+
+
+.project-content {
+    padding: 1.25rem;
+    background: white;
+    text-align: left;
+}
+
+.project-tag {
+    display: inline-block;
+    padding: 0.4rem 0.8rem;
+    background: #e0e7ff;
+    color: #4f46e5;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    margin-bottom: 0.8rem;
+    transition: all 0.3s ease;
+}
+
+
+.btn-primary, .btn-secondary {
+    display: inline-block;
+    padding: 0.7rem 1.2rem;
+    border-radius: 25px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+    margin-top: 1rem;
+}
+
+.btn-primary {
+    background: #4f46e5;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #4338ca;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+}
+
+.btn-secondary {
+    background: #e0e7ff;
+    color: #4f46e5;
+    margin-left: 0.5rem;
+}
+
+.btn-secondary:hover {
+    background: #c7d2fe;
+    transform: translateY(-2px);
+}
+
+
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+    
+    .project-image {
+        height: 180px;
+    }
+    
+    .semester-number {
+        font-size: 2rem;
+    }
+    
+    .project-card {
+        margin: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+    
+    .project-image {
+        height: 160px;
+    }
+    
+    .btn-primary, .btn-secondary {
+        display: block;
+        margin: 0.5rem 0;
+        text-align: center;
+    }
+}
+
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* Add this to your existing CSS file */
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.modal.active {
+    opacity: 1;
+}
+
+.modal-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 600px;
+    position: relative;
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.modal.active .modal-content {
+    transform: translateY(0);
+}
+
+.modal-header {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #e0e7ff;
+}
+
+.modal-title {
+    font-size: 1.8rem;
+    color: #4f46e5;
+    font-weight: 700;
+}
+
+.modal-body {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #4b5563;
+}
+
+.close-modal {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #6b7280;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.close-modal:hover {
+    background: #f3f4f6;
+    color: #374151;
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

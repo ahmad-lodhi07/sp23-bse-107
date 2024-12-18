@@ -94,6 +94,41 @@
             <button type="submit" class="btn btn-success">Place Order</button>
         </form>
     </div>
+
+    <h3>Your Cart</h3>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Product</th>
+            <th>Price</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% if (products.length === 0) { %>
+            <tr>
+                <td colspan="3">Your cart is empty.</td>
+            </tr>
+        <% } else { %>
+            <% products.forEach(product => { %>
+                <tr>
+                    <td><%= product.title %></td>
+                    <td>$<%= product.price %></td>
+                    <td>
+                        <a href="/remove-from-cart/<%= product._id %>" class="btn btn-danger">Remove</a>
+                    </td>
+                </tr>
+            <% }) %>
+        <% } %>
+    </tbody>
+</table>
+
+<h4>Total: $<%= totalAmount %></h4>
+
+<form action="/checkout" method="POST">
+    <button type="submit" class="btn btn-success">Proceed to Checkout</button>
+</form>
+
     
     <style>
         .checkout-section {

@@ -63,6 +63,57 @@ router.get("/products/create", (req, res) => {
   res.render('admin/products/create');
 });
 
+
+
+// Route to display available products
+router.get('/products', async (req, res) => {
+  try {
+    let products = await Product.find(); // Fetch products from the database
+    return res.render('products', { products });
+  } catch (error) {
+    console.error('Error fetching products:', error);
+    return res.status(500).send('Server Error');
+  }
+});
+
+// Route to add product to cart
+router.get('/add-to-cart/:id', (req, res) => {
+  let cart = req.cookies.cart || [];
+  const productId = req.params.id;
+
+  // Prevent duplicate product in the cart
+  if (!cart.includes(productId)) {
+    cart.push(productId);
+  }
+
+  // Save cart to cookies
+  res.cookie('cart', cart);
+  return res.redirect('/cart');
+});
+
+// Route to remove product from cart
+router.get('/remove-from-cart/:id', (req, res) => {
+  let cart = req.cookies.cart || [];
+  const productId = req.params.id;
+
+  // Remove product from cart
+  cart = cart.filter(item => item !== productId);
+
+  // Save updated cart to cookies
+  res.cookie('cart', cart);
+  return res.redirect('/cart');
+});
+
+// Route to checkout
+router.get('/checkout', async (req, res) => {
+  let cart = req.cookies.cart || [];
+  let products = await Product.find({ _id: { $in: cart } });
+
+  let totalAmount = products.reduce((sum, product) => sum + product.price, 0);
+
+  res.render('checkout', { products, totalAmount });
+});
+
 // Route to handle form submission and save product to MongoDB
 router.post("/products/create", async (req, res) => {
   try {
